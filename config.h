@@ -6,12 +6,12 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 static char *fonts[] = {
-  "Liberation Mono:pixelsize=12:antialias=true:autohint=true",
-  "tewi:pixelsize=12:antialias=true:autohint=true"
+  "Liberation Mono:pixelsize=14:antialias=true:autohint=true",
+  "Hack Nerd Font:pixelsize=14:antialias=true:autohint=true"
 };
-static int fonts_current = 0;
+static int fonts_current = 1;
 
-static int borderpx = 2;
+static int borderpx = 1;
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -184,6 +184,8 @@ static uint forcemousemod = ShiftMask;
  */
 static MouseShortcut mshortcuts[] = {
 	/* mask                 button   function        argument       release */
+	{ ShiftMask,            Button4, kscrollup,      {.i = 1} },
+	{ ShiftMask,            Button5, kscrolldown,    {.i = 1} },
 	{ XK_ANY_MOD,           Button2, selpaste,       {.i = 0},      1 },
 	{ ShiftMask,            Button4, ttysend,        {.s = "\033[5;2~"} },
 	{ XK_ANY_MOD,           Button4, ttysend,        {.s = "\031"} },
